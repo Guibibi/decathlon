@@ -8,7 +8,7 @@ $ bundle install
 
 Next, go into **config/initializers/geocoder.rb** and add the Google maps API key in **line 10**
 
-Run the following commands:
+Run the following commands to initiate the database (I have included the pre-filled database just in case):
 
 ```
 $ rails db:migrate
