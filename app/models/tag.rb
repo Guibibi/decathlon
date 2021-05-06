@@ -1,3 +1,4 @@
 class Tag < ApplicationRecord
-  has_and_belongs_to_many :places
+  has_many :place_tags
+  has_many :places, through: :place_tags
 end

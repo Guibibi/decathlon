@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_05_012150) do
+ActiveRecord::Schema.define(version: 2021_05_06_024244) do
+
+  create_table "place_tags", force: :cascade do |t|
+    t.integer "place_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_place_tags_on_place_id"
+    t.index ["tag_id"], name: "index_place_tags_on_tag_id"
+  end
 
   create_table "places", force: :cascade do |t|
     t.float "lat"
@@ -34,4 +43,6 @@ ActiveRecord::Schema.define(version: 2021_05_05_012150) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "place_tags", "places"
+  add_foreign_key "place_tags", "tags"
 end
