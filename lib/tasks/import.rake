@@ -1,7 +1,4 @@
 require 'csv'
-require 'uri'
-require 'net/http'
-require 'json'
 require 'geocoder'
 
 
@@ -22,6 +19,8 @@ namespace :import do
         tags.reject!(&:blank?)
 
         address, zip, country = address_lookup(lat,lon)
+
+        #Create a new entry in the database.
         place = Place.new(name: name, long: lon, lat: lat, zip: zip, address: address, country: country, tags: tags) if place == nil
         place.save
       end
@@ -47,15 +46,6 @@ namespace :import do
       i += 1
     end
     #puts tags
-  end
-
-  task api: :environment do
-    #uri = URI.parse('https://maps.googleapis.com/maps/api/geocode/json?latlng=45.552874,-73.636959&key=AIzaSyAmd7W1Q6vrrZ3AYeE4HbTCTVYFhSM1lxg')
-    #res = Net::HTTP.get(uri)
-    #data = JSON.parse(res)
-    #res = HTTParty.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=45.552874,-73.636959&key=AIzaSyAmd7W1Q6vrrZ3AYeE4HbTCTVYFhSM1lxg')
-    results = Geocoder.search([45.552526,-73.63639])
-    puts results.first.inspect
   end
 
 end
