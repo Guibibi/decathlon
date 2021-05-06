@@ -1,24 +1,29 @@
-# README
+## Getting started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To get started with the app, clone the repo and then do the following:
 
-Things you may want to cover:
+```
+$ bundle install
+```
 
-* Ruby version
+Next, go into **config/initializers/geocoder.rb** and add the Google maps API key in **line 10**
 
-* System dependencies
+Run the following commands:
 
-* Configuration
+```
+$ rails db:migrate
+$ rake import:tags
+$ rake import:places
+```
 
-* Database creation
+Finally, run the test suite to verify that everything is working correctly:
 
-* Database initialization
+```
+$ rails test
+```
 
-* How to run the test suite
+If the test suite passes, you'll be ready to run the app in a local server:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ rails server
+```
