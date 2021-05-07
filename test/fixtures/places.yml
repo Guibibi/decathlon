@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  lat: 1.5
-  long: 1.5
-  name: MyString
-  zip: MyString
-  address: MyString
-  country: MyString
+    lat: 45.552526
+    long: -73.63639
+    name: Saint-Jean-Baptiste
+    zip: H7L5H3
+    address: 1055 Rue d'Hibernia
+    country: Canada
 
 two:
-  lat: 1.5
-  long: 1.5
-  name: MyString
-  zip: MyString
-  address: MyString
-  country: MyString
+    lat: 45.432989
+    long: -73.622005
+    name: Bain Quintal
+    zip: H2K 2E6
+    address: 2375 Boulevard de Maisonneuve Est
+    country: Canada
